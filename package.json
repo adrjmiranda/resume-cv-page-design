@@ -1,0 +1,20 @@
+{
+  "name": "resume-cv-page-design",
+  "version": "1.0.0",
+  "description": "A modern, responsive design for an online Resume/CV, highlighting skills, experience and portfolio in an elegant way. Developed with HTML, CSS and JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrjmiranda/resume-cv-page-design.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adrjmiranda/resume-cv-page-design/issues"
+  },
+  "homepage": "https://github.com/adrjmiranda/resume-cv-page-design#readme"
+}
