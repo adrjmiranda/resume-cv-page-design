@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/adrjmiranda/resume-cv-page-design/issues"
   },
-  "homepage": "https://github.com/adrjmiranda/resume-cv-page-design#readme"
+  "homepage": "https://github.com/adrjmiranda/resume-cv-page-design#readme",
+  "devDependencies": {
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
 }
