@@ -1,13 +1,10 @@
 /***************** Font Import *******************/
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 /***************** Variables *******************/
-
 :root {
 	/* Colors */
-
 	--black-color: #111211;
 
 	--primary-color: #940533;
@@ -19,20 +16,17 @@
 	--white-color: #f3f3fe;
 
 	/* Font Weight */
-
 	--light-font: 300;
 	--normal-font: 400;
 	--semi-bold-font: 600;
 	--bold-font: 800;
 
 	/* Font Family */
-
 	--text-font-family: 'Roboto', 'Arial', 'Helvetica', 'Open Sans', sans-serif;
 	--main-font-family: 'Anton', 'Arial Black', 'Helvetica Neue', 'Tahoma',
 		sans-serif;
 
 	/* Font Size */
-
 	--sm-font-size: 0.875rem;
 	--base-font-size: 1rem;
 	--lg-font-size: 1.5rem;
@@ -40,28 +34,23 @@
 	--xxl-font-size: 3rem;
 
 	/* Border Radius */
-
 	--light-radius: 0.25rem;
 	--medium-radius: 0.5rem;
 	--circle-radius: 50%;
 
 	/* Transition */
-
 	--transition-speed: 0.3s;
 	--transition-timer: ease-in-out;
 
 	/* Width */
-
 	--max-container-width: 1280px;
 
 	/* Padding */
-
 	--line-padding-container: 0.25rem;
-	--block-padding-container: 3.25rem;
+	--block-container-padding: 3.25rem;
 }
 
 /***************** Reset and Global Styles *******************/
-
 * {
 	margin: 0;
 	padding: 0;
@@ -99,3 +88,41 @@ select {
 ul {
 	list-style: none;
 }
+
+/***************** Reusable *******************/
+.container {
+	max-width: var(--max-container-width);
+	padding-block: var(--block-container-padding);
+}
+
+/***************** HEADER *******************/
+/* TODO: Create HEADER style */
+/***************** NAVBAR *******************/
+/* TODO: Create NAVBAR style */
+/***************** BANNER *******************/
+/* TODO: Create BANNER style */
+/************** End of HEADER ***************/
+
+/***************** ABOUT *******************/
+/* TODO: Create ABOUT style */
+/************** End of ABOUT ***************/
+
+/***************** EXPERIENCE *******************/
+/* TODO: Create EXPERIENCE style */
+/************** End of EXPERIENCE ***************/
+
+/***************** SERVICES *******************/
+/* TODO: Create SERVICES style */
+/************** End of SERVICES ***************/
+
+/***************** CONTACT *******************/
+/* TODO: Create CONTACT style */
+/************** End of CONTACT ***************/
+
+/***************** SOCIAL MEDIA *******************/
+/* TODO: Create SOCIAL MEDIA style */
+/************** End of SOCIAL MEDIA ***************/
+
+/***************** CREDIT AREA *******************/
+/* TODO: Create CREDIT AREA style */
+/************** End of CREDIT AREA ***************/
