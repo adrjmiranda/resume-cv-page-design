@@ -93,6 +93,7 @@ ul {
 .container {
 	max-width: var(--max-container-width);
 	padding-block: var(--block-container-padding);
+	margin: 0 auto;
 }
 
 /***************** HEADER *******************/
