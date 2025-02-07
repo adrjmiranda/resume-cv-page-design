@@ -89,6 +89,12 @@ ul {
 	list-style: none;
 }
 
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
 /***************** Reusable *******************/
 .container {
 	max-width: var(--max-container-width);
@@ -97,11 +103,84 @@ ul {
 }
 
 /***************** HEADER *******************/
-/* TODO: Create HEADER style */
+#header {
+	height: 100vh;
+}
+
+/***************** BANNER *******************/
+#banner {
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(
+			rgba(0, 0, 0, 0.98),
+			rgba(0, 0, 0, 0.915),
+			rgba(0, 0, 0, 0.975)
+		),
+		url('../img/wall-background.jpg');
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.banner-content {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.banner-profile {
+	border-radius: var(--circle-radius);
+	height: 396px;
+	width: 396px;
+	filter: drop-shadow(8px 12px 25px var(--button-color));
+	border: 2px solid var(--button-hover-color);
+	box-shadow: 3px 3px 55px 15px var(--button-color);
+	margin-bottom: 2rem;
+	object-fit: cover;
+	background-image: linear-gradient(#ff8800, #ffb300);
+}
+
+.bannter-title,
+.banner-subtitle {
+	z-index: 10;
+}
+
+.bannter-title {
+	font-size: var(--xxl-font-size);
+	color: var(--button-hover-color);
+}
+
+.banner-subtitle {
+	color: var(--white-color);
+}
+
+.banner-icon {
+	position: absolute;
+	left: 50%;
+	bottom: 3.5rem;
+	transform: translate(-50%, -50%);
+	height: 58px;
+	width: 34px;
+	border: 3px solid var(--white-color);
+	border-radius: var(--medium-radius);
+	opacity: 0.55;
+}
+
+.banner-icon::before {
+	position: absolute;
+	content: '';
+	height: 17px;
+	width: 5px;
+	background-color: var(--white-color);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: var(--light-radius);
+}
+
 /***************** NAVBAR *******************/
 /* TODO: Create NAVBAR style */
-/***************** BANNER *******************/
-/* TODO: Create BANNER style */
 /************** End of HEADER ***************/
 
 /***************** ABOUT *******************/
