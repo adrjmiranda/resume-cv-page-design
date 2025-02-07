@@ -29,8 +29,9 @@
 		sans-serif;
 
 	/* Font Size */
-	--sm-font-size: 0.875rem;
-	--base-font-size: 0.955rem;
+	--sm-font-size: 0.835rem;
+	--base-font-size: 0.985rem;
+	--md-font-size: 1.075rem;
 	--lg-font-size: 1.5rem;
 	--xl-font-size: 2rem;
 	--xxl-font-size: 3rem;
@@ -62,9 +63,9 @@
 body {
 	scroll-behavior: smooth;
 	font-family: var(--text-font-family);
-
 	background-color: var(--black-color-10);
 	color: var(--white-color-10);
+	position: relative;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
@@ -103,7 +104,6 @@ img {
 /***************** Reusable *******************/
 .container {
 	max-width: var(--max-container-width);
-	padding-block: var(--block-container-padding);
 	margin: 0 auto;
 }
 
@@ -118,14 +118,18 @@ img {
 	filter: drop-shadow(3px 3px 9px var(--alt-color));
 }
 
+.section-container {
+	padding-block: var(--block-container-padding);
+}
+
 /***************** HEADER *******************/
 #header {
-	height: 100vh;
+	min-height: 100vh;
 }
 
 /***************** BANNER *******************/
 #banner {
-	height: 100%;
+	height: 100vh;
 	width: 100%;
 	background-image: linear-gradient(
 			rgba(0, 0, 0, 0.98),
@@ -252,6 +256,10 @@ img {
 	height: 80px;
 	display: flex;
 	align-items: center;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 10;
 }
 
 .nav-content,
@@ -284,7 +292,105 @@ img {
 /************** End of HEADER ***************/
 
 /***************** ABOUT *******************/
-/* TODO: Create ABOUT style */
+.about-content {
+	display: grid;
+	grid-template-columns: 32% 62%;
+	column-gap: 6%;
+	align-items: end;
+	grid-template-rows: repeat(1, auto);
+}
+
+.about-left img {
+	border-radius: 32%;
+	filter: drop-shadow(1px 1px 120px rgba(255, 179, 0, 0.3));
+	background-image: linear-gradient(
+		rgba(255, 179, 0, 0.008),
+		rgba(255, 179, 0, 0.005)
+	);
+	border-left: 40px solid rgba(255, 179, 0, 0.009);
+}
+
+.about-right {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.about-title {
+	font-size: var(--xl-font-size);
+	color: var(--primary-color);
+}
+
+.about-description {
+	font-weight: var(--light-font);
+	font-size: var(--md-font-size);
+	line-height: 1.5;
+}
+
+.about-skills {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 1.75rem 0.95rem;
+	background-color: var(--black-color-00);
+	border-radius: var(--medium-radius);
+	gap: 1rem;
+	box-shadow: 3px 3px 100px 15px rgba(255, 255, 255, 0.022);
+}
+
+.skill-item {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.skill-title {
+	color: var(--alt-color);
+}
+
+.skill-bar {
+	background-color: var(--black-color-00);
+	font-size: var(--sm-font-size);
+	border-radius: var(--light-radius);
+	color: var(--secondary-color);
+	font-weight: var(--semi-bold-font);
+	text-align: center;
+	border: 2px solid var(--black-color-10);
+	padding: 0.08rem;
+	position: relative;
+	box-shadow: 3px 3px 25px 15px rgba(255, 255, 255, 0.032);
+}
+
+.skill-bar span {
+	z-index: 20;
+	position: relative;
+}
+
+.skill-bar::after {
+	z-index: 10;
+	content: '';
+	background-color: var(--black-color-10);
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.skill-item:nth-child(1) .skill-bar::after {
+	width: 89%;
+}
+
+.skill-item:nth-child(2) .skill-bar::after {
+	width: 90%;
+}
+
+.skill-item:nth-child(3) .skill-bar::after {
+	width: 55%;
+}
+
+.skill-item:nth-child(4) .skill-bar::after {
+	width: 45%;
+}
 /************** End of ABOUT ***************/
 
 /***************** EXPERIENCE *******************/
