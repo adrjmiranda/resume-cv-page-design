@@ -5,15 +5,17 @@
 /***************** Variables *******************/
 :root {
 	/* Colors */
-	--black-color: #111211;
+	--black-color-00: black;
+	--black-color-10: #111211;
 
-	--primary-color: #940533;
-	--secondary-color: #c0012a;
-	--tertiary-color: #f5061d;
-	--button-color: #ff8800;
-	--button-hover-color: #ffb300;
+	--button-hover-color: #940533;
+	--alt-color: #c0012a;
+	--button-color: #f5061d;
+	--primary-color: #ff8800;
+	--secondary-color: #ffb300;
 
-	--white-color: #f3f3fe;
+	--white-color-00: white;
+	--white-color-10: #f3f3fe;
 
 	/* Font Weight */
 	--light-font: 300;
@@ -28,7 +30,7 @@
 
 	/* Font Size */
 	--sm-font-size: 0.875rem;
-	--base-font-size: 1rem;
+	--base-font-size: 0.955rem;
 	--lg-font-size: 1.5rem;
 	--xl-font-size: 2rem;
 	--xxl-font-size: 3rem;
@@ -60,6 +62,9 @@
 body {
 	scroll-behavior: smooth;
 	font-family: var(--text-font-family);
+
+	background-color: var(--black-color-10);
+	color: var(--white-color-10);
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
@@ -102,6 +107,17 @@ img {
 	margin: 0 auto;
 }
 
+.logo {
+	font-weight: var(--semi-bold-font);
+	font-family: var(--main-font-family);
+	color: var(--primary-color);
+	transition: var(--transition-speed) var(--transition-timer);
+}
+
+.logo:hover {
+	filter: drop-shadow(3px 3px 9px var(--alt-color));
+}
+
 /***************** HEADER *******************/
 #header {
 	height: 100vh;
@@ -117,6 +133,10 @@ img {
 			rgba(0, 0, 0, 0.975)
 		),
 		url('../img/wall-background.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -133,9 +153,9 @@ img {
 	border-radius: var(--circle-radius);
 	height: 396px;
 	width: 396px;
-	filter: drop-shadow(8px 12px 25px var(--button-color));
-	border: 2px solid var(--button-hover-color);
-	box-shadow: 3px 3px 55px 15px var(--button-color);
+	filter: drop-shadow(8px 12px 25px var(--primary-color));
+	border: 2px solid var(--secondary-color);
+	box-shadow: 3px 3px 55px 15px var(--primary-color);
 	margin-bottom: 2rem;
 	object-fit: cover;
 	background-image: linear-gradient(#ff8800, #ffb300);
@@ -148,11 +168,11 @@ img {
 
 .bannter-title {
 	font-size: var(--xxl-font-size);
-	color: var(--button-hover-color);
+	color: var(--secondary-color);
 }
 
 .banner-subtitle {
-	color: var(--white-color);
+	color: var(--white-color-10);
 }
 
 .banner-icon {
@@ -162,7 +182,7 @@ img {
 	transform: translate(-50%, -50%);
 	height: 58px;
 	width: 34px;
-	border: 3px solid var(--white-color);
+	border: 3px solid var(--white-color-10);
 	border-radius: var(--medium-radius);
 	opacity: 0.55;
 }
@@ -172,7 +192,7 @@ img {
 	content: '';
 	height: 17px;
 	width: 5px;
-	background-color: var(--white-color);
+	background-color: var(--white-color-10);
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
@@ -180,7 +200,40 @@ img {
 }
 
 /***************** NAVBAR *******************/
-/* TODO: Create NAVBAR style */
+#navbar {
+	background-color: var(--black-color-00);
+	height: 80px;
+	display: flex;
+	align-items: center;
+}
+
+.nav-content,
+.nav-menu {
+	display: flex;
+	align-items: center;
+}
+
+.nav-content {
+	flex: 1;
+	justify-content: space-between;
+}
+
+.nav-menu {
+	gap: 1.05rem;
+}
+
+.nav-link {
+	color: var(--white-color-10);
+	font-weight: var(--normal-font);
+	font-size: var(--base-font-size);
+	transition: var(--transition-speed) var(--transition-timer);
+}
+
+.nav-link.active,
+.nav-link:hover {
+	color: var(--secondary-color);
+	filter: drop-shadow(3px 3px 9px var(--secondary-color));
+}
 /************** End of HEADER ***************/
 
 /***************** ABOUT *******************/
