@@ -358,7 +358,7 @@ img {
 	color: var(--secondary-color);
 	font-weight: var(--semi-bold-font);
 	text-align: center;
-	border: 2px solid var(--black-color-10);
+	border: 1px solid var(--white-color-10);
 	padding: 0.08rem;
 	position: relative;
 	box-shadow: 3px 3px 25px 15px rgba(255, 255, 255, 0.032);
