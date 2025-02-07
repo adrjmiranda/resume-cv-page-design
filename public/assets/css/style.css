@@ -185,6 +185,30 @@ img {
 	border: 3px solid var(--white-color-10);
 	border-radius: var(--medium-radius);
 	opacity: 0.55;
+	animation: 1.5s var(--transition-timer) 0.5s infinite normal forwards
+		box__movie;
+}
+
+@keyframes box__movie {
+	0% {
+		bottom: 3.5rem;
+		opacity: 0.55;
+	}
+
+	47% {
+		bottom: 3.7rem;
+		opacity: 1;
+	}
+
+	63% {
+		bottom: 3.2rem;
+		opacity: 0.85;
+	}
+
+	100% {
+		bottom: 3.5rem;
+		opacity: 0.55;
+	}
 }
 
 .banner-icon::before {
@@ -197,6 +221,29 @@ img {
 	top: 50%;
 	transform: translate(-50%, -50%);
 	border-radius: var(--light-radius);
+	animation: 2s var(--transition-timer) 0s infinite normal forwards point__movie;
+}
+
+@keyframes point__movie {
+	0% {
+		top: 50%;
+		opacity: 0.55;
+	}
+
+	47% {
+		top: 48%;
+		opacity: 1;
+	}
+
+	63% {
+		top: 55%;
+		opacity: 0.85;
+	}
+
+	100% {
+		top: 50%;
+		opacity: 0.55;
+	}
 }
 
 /***************** NAVBAR *******************/
