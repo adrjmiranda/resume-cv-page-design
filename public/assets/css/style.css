@@ -368,6 +368,10 @@ img {
 /************** End of NAVBAR ***************/
 
 /***************** ABOUT *******************/
+#about {
+	overflow-x: hidden;
+}
+
 .about-content {
 	display: grid;
 	grid-template-columns: 32% 62%;
@@ -473,6 +477,10 @@ img {
 /************** End of ABOUT ***************/
 
 /***************** EXPERIENCE *******************/
+#experience {
+	overflow-x: hidden;
+}
+
 .experience-content {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -594,6 +602,10 @@ img {
 	grid-template-columns: repeat(3, 1fr);
 	column-gap: 1.25rem;
 	row-gap: 1.38rem;
+}
+
+.service-list::-webkit-scrollbar {
+	display: none;
 }
 
 .service-item {

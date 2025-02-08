@@ -117,3 +117,81 @@ const initializeNavbar = (): void => {
 };
 
 initializeNavbar();
+
+/**
+ * ScrollReveal Animations
+ */
+import ScrollReveal from 'scrollreveal';
+
+const revealElement = (
+	selector: string,
+	options: scrollReveal.ScrollRevealObjectOptions
+): void => {
+	ScrollReveal().reveal(selector, {
+		easing: 'ease-in',
+		reset: true,
+		...options,
+	});
+};
+
+// About Section
+revealElement('.about-right', {
+	origin: 'right',
+	distance: '100%',
+	duration: 1500,
+});
+revealElement('.about-left', {
+	easing: 'ease-in-out',
+	opacity: 0,
+	duration: 3000,
+});
+
+// Experience Section
+revealElement('.experience-left', {
+	origin: 'left',
+	distance: '40%',
+	easing: 'ease-in-out',
+	opacity: 0,
+	duration: 1000,
+});
+
+revealElement('.experience-right', {
+	origin: 'right',
+	distance: '40%',
+	easing: 'ease-in-out',
+	opacity: 0,
+	duration: 1000,
+});
+
+// Services Section
+const servicesQuantity = (
+	document.querySelectorAll('.service-item') as NodeListOf<HTMLDivElement>
+)?.length;
+
+if (servicesQuantity) {
+	for (let i = 0; i < servicesQuantity; i++) {
+		revealElement(`.service-item:nth-child(${i + 1})`, {
+			origin: 'bottom',
+			distance: '80%',
+			opacity: 0,
+			duration: 1000,
+			easing: 'ease-in',
+			delay: i * 100,
+		});
+	}
+}
+
+const contactQuantity = (
+	document.querySelectorAll('.contact-item') as NodeListOf<HTMLDivElement>
+)?.length;
+
+if (contactQuantity) {
+	for (let i = 0; i < contactQuantity; i++) {
+		revealElement(`.contact-item:nth-child(${i + 1})`, {
+			opacity: 0,
+			duration: 1000,
+			easing: 'ease-in',
+			delay: i * 200,
+		});
+	}
+}
