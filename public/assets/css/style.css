@@ -8,9 +8,9 @@
 	--black-color-00: black;
 	--black-color-10: #111211;
 
-	--button-hover-color: #940533;
+	--button-color: #940533;
 	--alt-color: #c0012a;
-	--button-color: #f5061d;
+	--button-hover-color: #f5061d;
 	--primary-color: #ff8800;
 	--secondary-color: #ffb300;
 
@@ -54,6 +54,13 @@
 
 	/* Box Shadow */
 	--card-white-shadow: 3px 3px 100px 15px rgba(255, 255, 255, 0.022);
+
+	/* Linear Gradient */
+	--banner-linear-gradient: linear-gradient(
+		rgba(0, 0, 0, 0.98),
+		rgba(0, 0, 0, 0.915),
+		rgba(0, 0, 0, 0.975)
+	);
 }
 
 /***************** Reset and Global Styles *******************/
@@ -148,15 +155,25 @@ img {
 	font-size: var(--md-font-size);
 }
 
+.btn {
+	background-color: var(--button-color);
+	color: var(--white-color-10);
+	padding: 0.55rem 1.35rem;
+	border-radius: var(--light-radius);
+	font-size: var(--md-font-size);
+	font-weight: var(--light-font);
+	transition: var(--transition-speed) var(--transition-timer);
+}
+
+.btn:hover {
+	background-color: var(--button-hover-color);
+}
+
 /***************** BANNER *******************/
 #banner {
 	min-height: 100vh;
 	width: 100%;
-	background-image: linear-gradient(
-			rgba(0, 0, 0, 0.98),
-			rgba(0, 0, 0, 0.915),
-			rgba(0, 0, 0, 0.975)
-		),
+	background-image: var(--banner-linear-gradient),
 		url('../img/wall-background.jpg');
 	background-position: center;
 	background-size: cover;
@@ -612,7 +629,52 @@ img {
 /************** End of SERVICES ***************/
 
 /***************** CONTACT *******************/
-/* TODO: Create CONTACT style */
+#contact {
+	background-image: var(--banner-linear-gradient),
+		url('../img/office-background.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.contact-items {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 2.5rem;
+	justify-content: center;
+	align-items: center;
+	max-width: fit-content;
+}
+
+.contact-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.contact-item i {
+	background-color: var(--secondary-color);
+	color: var(--white-color-10);
+	padding: 1.25rem;
+	border-radius: var(--circle-radius);
+	font-size: var(--xxl-font-size);
+}
+
+.contact-item p {
+	font-weight: var(--bold-font);
+	font-size: var(--md-font-size);
+}
+
+.contact-buttons {
+	display: flex;
+	justify-content: center;
+	margin-top: 4.5rem;
+	align-items: center;
+	gap: 1.15rem;
+}
 /************** End of CONTACT ***************/
 
 /***************** SOCIAL MEDIA *******************/
