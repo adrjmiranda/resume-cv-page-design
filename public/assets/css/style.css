@@ -678,7 +678,47 @@ img {
 /************** End of CONTACT ***************/
 
 /***************** SOCIAL MEDIA *******************/
-/* TODO: Create SOCIAL MEDIA style */
+#social-media {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	width: fit-content;
+	z-index: 100;
+}
+
+.social-media-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.social-link {
+	background-color: var(--alt-color);
+	color: var(--white-color-10);
+	font-size: var(--lg-font-size);
+	padding: 0.25rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--light-radius);
+}
+
+.social-link,
+.social-link i {
+	transition: var(--transition-speed) var(--transition-timer);
+}
+
+.social-link i {
+	pointer-events: none;
+}
+
+.social-link:hover {
+	transform: scale(1.1);
+}
+
+.social-link:hover i {
+	color: var(--white-color-00);
+}
 /************** End of SOCIAL MEDIA ***************/
 
 /***************** CREDIT AREA *******************/
