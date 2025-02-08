@@ -49,7 +49,7 @@
 	--max-container-width: 1280px;
 
 	/* Padding */
-	--line-padding-container: 0.25rem;
+	--inline-padding-container: 1rem;
 	--block-container-padding: 3.25rem;
 
 	/* Box Shadow */
@@ -115,6 +115,7 @@ img {
 /***************** Reusable *******************/
 .container {
 	max-width: var(--max-container-width);
+	padding-inline: var(--inline-padding-container);
 	margin: 0 auto;
 }
 
@@ -169,10 +170,17 @@ img {
 	background-color: var(--button-hover-color);
 }
 
+.show-element {
+	display: flex;
+}
+
+.hidden-element {
+	display: none;
+}
+
 /***************** BANNER *******************/
 #banner {
 	min-height: 100vh;
-	width: 100%;
 	background-image: var(--banner-linear-gradient),
 		url('../img/wall-background.jpg');
 	background-position: center;
@@ -219,7 +227,7 @@ img {
 }
 
 .banner-icon {
-	--box-bottom: 3.5rem;
+	--box-bottom: 0.75rem;
 	position: absolute;
 	left: 50%;
 	bottom: var(--box-bottom);
@@ -312,6 +320,33 @@ img {
 .nav-content {
 	flex: 1;
 	justify-content: space-between;
+}
+
+/***************** Toggle Menu *******************/
+#toggle-menu {
+	display: none;
+	margin-bottom: 1.25rem;
+}
+
+#toggle-menu,
+#toggle-menu button {
+	justify-content: center;
+	align-items: center;
+}
+
+#toggle-menu button {
+	display: flex;
+	flex-direction: column;
+	color: var(--white-color-10);
+	font-size: var(--lg-font-size);
+}
+
+#toggle-menu button i {
+	pointer-events: none;
+}
+
+#toggle-menu .hidden i:first-child {
+	margin-bottom: -0.85rem;
 }
 
 .nav-menu {
@@ -752,14 +787,14 @@ img {
 
 /***************** Responsiveness *******************/
 @media screen and (max-width: 1280px) {
-	/***************** Banner *******************/
+	/***************** BANNER *******************/
 	.banner-icon {
 		--box-bottom: 1.8rem;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	/***************** Banner *******************/
+	/***************** BANNER *******************/
 	.banner-profile {
 		--profile-img-size: 50vw;
 	}
@@ -767,10 +802,22 @@ img {
 	.banner-icon {
 		--box-bottom: 1.5rem;
 	}
+
+	/***************** NAVBAR *******************/
+
+	.nav-content {
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.logo {
+		display: none;
+	}
 }
 
 @media screen and (max-width: 576px) {
-	/***************** Banner *******************/
+	/***************** BANNER *******************/
 	.banner-profile {
 		--profile-img-size: 68vw;
 	}
@@ -784,10 +831,47 @@ img {
 		text-align: center;
 		max-width: 80%;
 	}
+
+	/***************** NAVBAR *******************/
+	#navbar {
+		bottom: -250px;
+		height: auto;
+		bottom: -100%;
+		padding-block: 1.25rem;
+	}
+
+	#toggle-menu {
+		display: flex;
+		margin-bottom: 0;
+	}
+
+	#toggle-menu button.hidden-element,
+	.nav-menu.hidden-element {
+		display: none;
+	}
+
+	#toggle-menu button.show-element,
+	.nav-menu.show-element {
+		display: flex;
+	}
+
+	#toggle-menu .hidden {
+		position: relative;
+		--box-bottom: 0.25rem;
+		animation: 1s var(--transition-timer) 0.5s infinite normal forwards
+			box__movie;
+	}
+
+	.nav-menu {
+		margin-top: 1.55rem;
+		flex-direction: column;
+		height: 100%;
+		display: none;
+	}
 }
 
 @media screen and (max-width: 320px) {
-	/***************** Banner *******************/
+	/***************** BANNER *******************/
 	.banner-profile {
 		--profile-img-size: 75vw;
 	}

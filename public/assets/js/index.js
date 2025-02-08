@@ -1,1 +1,1 @@
-console.log("It's working!");
+(()=>{var e=document.querySelector("#navbar .nav-menu"),s=document.querySelector("#toggle-menu .show"),t=document.querySelector("#toggle-menu .hidden"),a="show-element",c="hidden-element";e&&s&&t&&(s.addEventListener("click",(function(){e.classList.remove(c),e.classList.add(a),s.classList.remove(a),s.classList.add(c),t.classList.remove(c),t.classList.add(a)})),t.addEventListener("click",(function(){e.classList.remove(a),e.classList.add(c),s.classList.remove(c),s.classList.add(a),t.classList.remove(a),t.classList.add(c)})))})();
