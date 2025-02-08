@@ -722,5 +722,28 @@ img {
 /************** End of SOCIAL MEDIA ***************/
 
 /***************** CREDIT AREA *******************/
-/* TODO: Create CREDIT AREA style */
+#credit-area {
+	background-color: var(--white-color-00);
+	padding-block: 0.35rem;
+}
+
+.credit {
+	text-align: center;
+	font-size: var(--sm-font-size);
+	color: var(--black-color-00);
+	font-weight: var(--light-font);
+}
+
+.credit a,
+.credit span {
+	color: var(--alt-color);
+}
+
+.credit a {
+	font-weight: var(--semi-bold-font);
+}
+
+.credit span {
+	font-weight: var(--normal-font);
+}
 /************** End of CREDIT AREA ***************/
