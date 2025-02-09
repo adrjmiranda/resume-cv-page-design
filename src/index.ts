@@ -177,6 +177,7 @@ if (servicesQuantity) {
 			duration: 1000,
 			easing: 'ease-in',
 			delay: i * 100,
+			reset: false,
 		});
 	}
 }
